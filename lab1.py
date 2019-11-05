@@ -1,3 +1,31 @@
+# 1
+print("{:=^20}".format("3.1"))
+NAT = "ip nat inside source list ACL interface FastEthernet0/1 overload"
+print("1.", NAT.replace("Fast", "Gigabit"), end = "\n\n")
+
+# 2
+print("{:=^20}".format("3.2"))
+MAC = 'AAAA:BBBB:CCCC'
+print("2.", MAC.replace(":", ","), end = "\n\n")
+
+# 3
+print("{:=^20}".format("3.3"))
+CONFIG = 'switchport trunk allowed vlan 1,3,10,20,30,100'
+print("3.", CONFIG.split()[-1].split(","), end = "\n\n")
+
+# 4
+print("{:=^20}".format("3.4"))
+command1 = 'switchport trunk allowed vlan 1,3,10,20,30,100'
+command2 = 'switchport trunk allowed vlan 1,3,100,200,300'
+print("4.", set(command1.split()[-1].split(",")) & set(command2.split()[-1].split(",")), end = "\n\n")
+
+# 5
+print("{:=^20}".format("3.5"))
+VLANS = [10, 20, 30, 1, 2, 100, 10, 30, 3, 4, 10]
+UNIQUE = list(set(VLANS))
+UNIQUE.sort()
+print("5.", UNIQUE, end="\n\n")
+
 # 3.6
 print("{:=^20}".format("3.6"))
 ospf_route = 'O 10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0'.split()
@@ -25,3 +53,4 @@ num_list.reverse()
 word_list.reverse()
 print(len(num_list) - num_list.index(10) - 1)
 print(len(word_list) - word_list.index('ruby') - 1)
+
